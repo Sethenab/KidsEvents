@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Gérer les Thèmes</h1>
+				{# 
+					form : variable envoyée par le contrôleur
+					<form novalidate="novalidate"
+				#}
+				{{ form_start(form, { attr : { 'novalidate' : 'novalidate' } }) }}
+					<p>
+						{{ form_label(form.name, 'Nom :') }}
+						{{ form_widget(form.name) }}
+						{{ form_errors(form.name) }}
+					</p>
+					<p>
+						{{ form_label(form.description, 'Description :') }}
+						{{ form_widget(form.description) }}
+						{{ form_errors(form.description) }}
+					</p>
+					<p>
+						{{ form_label(form.duree, 'Duree :') }}
+						{{ form_widget(form.duree) }}
+						{{ form_errors(form.duree) }}
+					</p>
+					<p>
+						{{ form_label(form.prix, 'Prix :') }}
+						{{ form_widget(form.prix) }}
+						{{ form_errors(form.prix) }}
+					</p>
+					<p>
+						{{ form_label(form.ageMinimum, 'Age min :') }}
+						{{ form_widget(form.ageMinimum) }}
+						{{ form_errors(form.ageMinimum) }}
+					</p>
+					<p>
+						{{ form_label(form.ageMaximum, 'Age max :') }}
+						{{ form_widget(form.ageMaximum) }}
+						{{ form_errors(form.ageMaximum) }}
+					</p>
+                    <p>
+						{{ form_label(form.nbEnfantsMinimum, "Nb d'enfants min :") }}
+						{{ form_widget(form.nbEnfantsMinimum) }}
+						{{ form_errors(form.nbEnfantsMinimum) }}
+					</p>
+					<p>
+						{{ form_label(form.nbEnfantsMaximum, "Nb d'enfants max :") }}
+						{{ form_widget(form.nbEnfantsMaximum) }}
+						{{ form_errors(form.nbEnfantsMaximum) }}
+					</p>
+					<p>
+						{{ form_label(form.imageIllustration, "Image Illustration :") }}
+						{{ form_widget(form.imageIllustration) }}
+						{{ form_errors(form.imageIllustration) }}
+					</p>
+					{# <img src="{{ asset('img/' ~ form.imageIllustration) }}"></img> #}
+					{# <img src="{{ asset('build/images/logo.png') }}" alt="ACME logo"> #}
+					<p>
+						<input type="submit" class="btn btn-info">
+					</p>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

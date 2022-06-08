@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Administration</h1>
+				<p>
+					<a href="{{ url('admin.reservations.index') }}">Gérer les réservations</a>
+				</p>
+                <p>
+					<a href="{{ url('admin.themes.index') }}">Gérer les themes</a>
+				</p>
+                <p>
+					<a href="{{ url('admin.supplements.index') }}">Gérer les supplements</a>
+				</p>
+				<p>
+					<a href="{{ url('admin.users.index') }}">Gérer les utilisateurs</a>
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}

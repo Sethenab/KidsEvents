@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+				<h1 class="bienvenue">Nos Themes</h1>
+				{#
+					affichage des messages flash
+					notice est la clé créée dans le contrôleur
+				#}
+				<table>
+					{# results est envoyé par le contrôleur #}
+					{% for theme in results %}
+						<tr>
+							<td>
+							
+								<div class="tout">
+									<img class="bord" src="{{ asset('img/' ~ theme.imageIllustration) }}"></img>
+									<div class="moit">
+										<h1 class="bordo">{{ theme.name }}</h1>
+										<img class="floflo" src="img/flower.png" alt="">
+										<p class="pbord">{{ theme.description }}</p>
+
+										<p class="pbord">Ce thème dure {{ theme.duree }}</p>
+										<p class="pbord">Pour {{ theme.nbEnfantsMinimum }} à {{ theme.nbEnfantsMaximum }} enfants entre {{ theme.ageMinimum }} et {{ theme.ageMaximum }} ans</p>
+
+										<p class="pbord">{{ theme.prix }} € </p>
+										<a class="dbord" href="{{ url('reservations.new', { id: theme.id } ) }}"><span>Réserver</span></a>
+									</div>
+								</div>
+							</td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Gérer les étudiants</h1>
+				{# 
+					form : variable envoyée par le contrôleur
+					<form novalidate="novalidate"
+				#}
+				{{ form_start(form, { attr : { 'novalidate' : 'novalidate' } }) }}
+					<p>
+						{{ form_label(form.firstName, 'Prénom :') }}
+						{{ form_widget(form.firstName) }}
+						{{ form_errors(form.firstName) }}
+					</p>
+					<p>
+						{{ form_label(form.lastName, 'Nom :') }}
+						{{ form_widget(form.lastName) }}
+						{{ form_errors(form.lastName) }}
+					</p>
+					<p>
+						{{ form_label(form.email, 'Email :') }}
+						{{ form_widget(form.email) }}
+						{{ form_errors(form.email) }}
+					</p>
+					<p>
+						{{ form_label(form.birthday, 'Date de naissance :') }}
+						{{ form_widget(form.birthday) }}
+						{{ form_errors(form.birthday) }}
+					</p>
+					<p>
+						{{ form_label(form.classroom, 'Classe :') }}
+						{{ form_widget(form.classroom) }}
+						{{ form_errors(form.classroom) }}
+					</p>
+					<p>
+						{{ form_label(form.subjects, 'Sujets :') }}
+						{{ form_widget(form.subjects) }}
+						{{ form_errors(form.subjects) }}
+					</p>
+					<p>
+						<input type="submit" class="btn btn-info">
+					</p>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

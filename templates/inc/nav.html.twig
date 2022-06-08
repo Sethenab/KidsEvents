@@ -1,0 +1,52 @@
+{% set routeName = app.request.get('_route') %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url('homepage.index') }}">
+            <img src="{{ asset('img/logo_kids_events.jpg') }}"  alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div id="all" class="navbar-nav">
+                <a class="nav-link" aria-current="page" href="#">
+                    <img src="">
+                </a>
+                <a id="nav_left" class="nav-link {{ routeName == 'homepage.index' ? 'nav-active' : '' }}" href="/">Accueil</a>
+                <a id="nav" class="nav-link {{ routeName == 'themes.index' ? 'nav-active' : '' }}" href="/themes">Themes</a>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+				        <a id="nav" class="nav-link {{ routeName == 'reservations.index' ? 'nav-active' : '' }}" href="/reservations">
+                            Mes Réservations
+                        </a>
+                {% endif %}
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+				        <a id="night" class="navbar-brand px-2" href="{{ url('app_logout') }}">
+                            Se déconnecter
+                        </a>
+                {% else %}
+				        <a id="night" class="navbar-brand px-2" href="{{ url('app_login') }}">
+                            <img src="{{ asset('img/mdi_account.png') }}"
+                        </a>
+		        {% endif %}
+            </div>
+        </div>
+    </div>
+</nav> 
+
+{#<nav class="navbar  navbar-dark bg-dark">
+    <div class="container-fluid col-3">
+        <a class="navbar-brand" href="/homepage">
+        </a>
+    </div>
+    <div class="container-fluid col-9 pr-1 d-flex justify-content-center 2">
+        <a class="navbar-brand px-2" href="/">Accueil</a>
+        <a class="navbar-brand px-2" href="/themes">Themes</a>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+				<a class="navbar-brand px-2" href="{{ url('app_logout') }}">Logout</a>
+		{% else %}
+				<a class="navbar-brand px-2" href="{{ url('app_login') }}">Login</a>
+		{% endif %}
+
+    </div>
+</nav>#}

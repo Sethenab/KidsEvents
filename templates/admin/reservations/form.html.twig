@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Gérer les réservations</h1>
+				{# 
+					form : variable envoyée par le contrôleur
+					<form novalidate="novalidate"
+				#}
+				{{ form_start(form, { attr : { 'novalidate' : 'novalidate' } }) }}
+					<p>
+						{{ form_label(form.theme_id, 'idTheme :') }}
+						{{ form_widget(form.theme_id) }}
+						{{ form_errors(form.theme_id) }}
+					</p>
+					<p>
+						{{ form_label(form.user_id, 'idClient :') }}
+						{{ form_widget(form.user_id) }}
+						{{ form_errors(form.user_id) }}
+					</p>
+					<p>
+						{{ form_label(form.date_reservee, 'date reservée :') }}
+						{{ form_widget(form.date_reservee) }}
+						{{ form_errors(form.date_reservee) }}
+					</p>
+
+					<p>
+						<input type="submit" class="btn btn-info">
+					</p>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

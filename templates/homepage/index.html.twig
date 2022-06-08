@@ -1,0 +1,43 @@
+{% extends "./base.html.twig" %}
+
+{% block body %}
+
+<div class="all">
+    <div class="center">
+        <h1 class="bienvenue">Bienvenue sur</h1>
+    </div>
+    <div class="center">
+        <img class="b" src='{{ asset('img/logo_kids_events.jpg') }}' alt="">
+    </div>
+    <div class="center">
+        <p class="a">Le meilleur site de réservation d'anniversaire pour votre enfant</p>
+    </div>
+    <div class="truc">
+        <img class="acceuil" src='{{ asset('img/anniversaire-a-l-exterieur.png') }}' alt="">
+    </div>
+    <div class="center">
+        <h1 class="bienvenue">Nos Themes Populaires</h1>
+    </div>
+    <div class="tout">
+        <img class="bord" src="img/rdn.png" alt="">
+        <div class="moit">
+            <h1 class="bordo">Reine des neiges</h1>
+            <img class="floflo" src="img/flower.png" alt="">
+            <p class="pbord">Venez redécouvrir la magie du succès de Disney avec votre enfant, Tout les personnages sont présent et viendront vous accueillir</p>
+            <p class="pbord">148€</p>
+            <a class="dbord" href="/themes"><span>Réserver</span></a>
+            
+        </div>
+    </div>
+    <div class="tout2">
+            <div class="moit">
+                <h1 class="bordo">Fortnite</h1>
+                <img class="floflo" src="img/flower.png" alt="">
+                <p class="pbord">Si votre enfant est fan du battle royale à la mode, optez pour ce thèmes incluant une bataille de Nerf dans un de nos centres</p>
+                <p class="pbord">179€</p>
+                <a class="dbord" href="/themes"><span>Réserver</span></a>
+            </div>
+            <img class="bord" src="img/for.png" alt="">
+        </div>
+</div>
+{% endblock %}

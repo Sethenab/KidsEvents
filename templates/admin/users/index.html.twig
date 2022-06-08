@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Gérer les utilisateurs</h1>
+				{#
+					affichage des messages flash
+					notice est la clé créée dans le contrôleur
+				#}
+				{% for item in app.flashes('notice') %}
+					<p class="alert alert-success">{{ item }}</p>
+				{% endfor %}
+				{# <p>
+					<a href="{{ url('admin.users.form') }}" class="btn btn-primary">Ajouter</a>
+				</p> #}
+				<table class="table table-striped">
+					<tr>
+						<th>Id</th>
+						<th>Email</th>
+						
+					</tr>
+					{# results est envoyé par le contrôleur #}
+					{% for user in results %}
+						<tr>
+							<td>
+								{{ user.id }}
+							</td>
+							<td>
+								{{ user.email }}
+							</td>
+							{# <td>
+								<a href="{{ url('admin.users.form.update', { id: user.id } ) }}" class="btn btn-warning">Modifier</a>
+
+								<a href="{{ url('admin.users.remove', { id: user.id } ) }}" class="btn btn-danger">Supprimer</a>
+							</td> #}
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}

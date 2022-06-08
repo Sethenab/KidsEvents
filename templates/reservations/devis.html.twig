@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Devis</h1>
+				{#
+					affichage des messages flash
+					notice est la clé créée dans le contrôleur
+				#}
+                <div class="row">
+                    <h2>Votre Thème</h2>
+                    
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Image</th>
+                            <th>Thème</th>
+                            <th>Description</th>
+                            <th>Durée</th>
+                            <th>Prix</th>
+                            <th>Age Minimum</th>
+                            <th>Age Maximum</th>
+                            <th>Nb d'enfants Min</th>
+                            <th>Nb d'enfants Max</th>
+                            <th></th>
+                            
+                            
+                        </tr>
+                        {# results est envoyé par le contrôleur #}
+                        <tr>
+                            <td>
+                                <img src="{{ asset('img/' ~ theme.imageIllustration) }}" width=200px height=200px></img>
+                            </td>
+                            <td>
+                                {{ theme.name }}
+                            </td>
+                            <td>
+                                {{ theme.description }}
+                            </td>
+                            <td>
+                                {{ theme.duree }}
+                            </td>
+                            <td>
+                                {{ theme.prix }}
+                            </td>
+                            <td>
+                                {{ theme.ageMinimum }}
+                            </td>
+                            <td>
+                                {{ theme.ageMaximum }}
+                            </td>
+                            <td>
+                                {{ theme.nbEnfantsMinimum }}
+                            </td>
+                            <td>
+                                {{ theme.nbEnfantsMaximum }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="row">
+                <h2>vos Suppléménts</h2>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Nom</th>
+                            <th>Description</th>
+                            <th>Prix</th>
+                            
+                        </tr>
+                        {# results est envoyé par le contrôleur #}
+                        {% for suppl in supplem %}
+                            <tr>
+                                <td>
+                                    {{ suppl.nom }}
+                                </td>
+                                <td>
+                                    {{ suppl.description }}
+                                </td>
+                                <td>
+                                    {{ suppl.prix }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div>
+                <div class="row">
+                    <h2>Votre total s'élève à : {{prix}} €</h2>
+                </div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

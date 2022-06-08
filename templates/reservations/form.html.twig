@@ -1,0 +1,32 @@
+{% extends 'base2.html.twig' %}
+
+{% block body %}
+
+	<div class="container-fluid">
+        <a class="navbar-brand" href="/homepage">
+            <img src="{{ asset('img/logo_kids_events.jpg') }}"  alt="">
+        </a>
+		
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1 class="bienvenue">Choisir votre date de Réservation</h1>
+				{# 
+					form : variable envoyée par le contrôleur
+					<form novalidate="novalidate"
+				#}
+				{{ form_start(form, { attr : { 'novalidate' : 'novalidate' } }) }}
+					<p class="form">
+						{{ form_label(form.date_reservee, 'Date reservée :') }}
+						{{ form_widget(form.date_reservee) }}
+						{{ form_errors(form.date_reservee) }}
+					</p>
+
+					<p class="pipi">
+						<input type="submit" class="btn btn-info">
+					</p>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

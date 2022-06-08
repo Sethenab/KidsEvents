@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Gérer mes réservations</h1>
+				{#
+					affichage des messages flash
+					notice est la clé créée dans le contrôleur
+				#}
+				{% for item in app.flashes('notice') %}
+					<p class="alert alert-success">{{ item }}</p>
+				{% endfor %}
+				<table class="table table-striped">
+					
+					{# results est envoyé par le contrôleur #}
+					{% for reservation in results %}
+							<td>
+								{{ reservation.dateReservee  |date('d-m-Y')  }}
+							</td>
+							<td>
+								<a href="{{ url('reservations.supplements', { id: reservation.id } ) }}" class="btn btn-success">Suppléménts</a>
+
+								<a href="{{ url('reservations.devis', { id: reservation.id } ) }}" class="btn btn-success">Devis</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}

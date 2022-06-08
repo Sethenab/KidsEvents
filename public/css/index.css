@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+#nav_left {
+    text-decoration: none;
+    position: relative;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-size: 18px;
+    margin-left: 10%;
+}
+
+#nav {
+    text-decoration: none;
+    position: relative;
+    margin-left: 3%;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    color: #9B9B9B;
+}
+
+.nav-active {
+    font-weight: 700 !important;
+    color: #FF69B4 !important;
+}
+
+#night {
+    position: relative;
+    margin-left: auto;
+}
+
+#all {
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+    #nav_left {
+        margin-left: 3%;
+    }
+    #right {
+        margin-left: 3%;
+    }
+    #night {
+        margin-left: 2% !important;
+    }
+}
+
+.a {
+    margin-top: 2%;
+    position: relative;
+    display: inline;
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    color: #596FB5;
+}
+
+.b {
+    margin-top: 1%;
+}
+
+.truc {
+    position: relative;
+    width: 100%;
+    margin-top: 5%;
+}
+
+.acceuil {
+    position: relative;
+    width: 100%;
+}
+
+.bienvenue {
+    position: relative;
+    margin-top: 5%;
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    color: #596FB5;
+}
+
+.container {
+    width: 100%;
+}
+
+.blue {
+    margin-top: 10%;
+    width: 117.2%;
+    margin-left: -8.6%;
+    background-color: #596FB5;
+}
+
+.c {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.c2 {
+    width: 50%;
+    display: inline-block;
+    margin-left: -0.299%;
+}
+
+.rdn {
+    font-family: 'EB Garamond';
+    color: white;
+    margin-left: auto;
+    display: center;
+}
+
+.bord {
+    width: 50%;
+}
+
+.moit {
+    width: 50%;
+}
+
+.bordo {
+    display: table;
+    margin: 0 auto;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    color: #FFFFFF;
+    margin-top: 7%;
+}
+
+.floflo {
+    display: table;
+    margin: 0 auto;
+    margin-top: 1%;
+    width: 12.5%;
+}
+
+.pbord {
+    display: table;
+    margin: 0 auto;
+    margin-top: 4.4%;
+    max-width: 60.9%;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.dbord {
+    display: table;
+    margin: 0 auto;
+    text-decoration: none;
+    background-color: #FFFFFF;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-top: 3.8%;
+    margin-bottom: 3.8%;
+}
+
+span {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    text-align: center;
+    color: #596FB5;
+}
+
+.tout {
+    background-color: #596FB5;
+    display: inline-flex;
+    width: 100%;
+    margin-top: 8%;
+}
+
+.tout2 {
+    background-color: #596FB5;
+    display: inline-flex;
+    width: 100%;
+    margin-top: -0.8%;
+}
+
+.form {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin-top: 10%;
+    font-size: 30px;
+}
+
+.pipi {
+    font-family: 'EB Garamond';
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 24px !important;
+    line-height: 31px !important;
+    text-align: center;
+    color: #596FB5 !important;
+    margin-top: 10%;
+}
+
+table {
+    display: table-cell;
+}
+
+td {
+    display: table-cell;
+}
+
+.pbord2 {
+    display: table;
+    margin: 0 auto;
+    margin-top: 4.4%;
+    max-width: 50px;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+    color: #FFFFFF;
+}

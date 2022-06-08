@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+
+            {{ form_start(form, { attr : { 'novalidate' : 'novalidate' } }) }}
+
+            <tr><td>{{ form_widget(form.suppl) }}</td></tr>
+
+            <p>
+                    <input type="submit" class="btn btn-info">
+            </p>
+
+            {{ form_end(form) }}
+
+        </div>
+        <div class="row">
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Prix</th>
+                    
+                </tr>
+                {# results est envoyé par le contrôleur #}
+                {% for suppl in supplem %}
+                    <tr>
+                        <td>
+                            {{ suppl.id - 1}}
+                        </td>
+                        <td>
+                            {{ suppl.nom }}
+                        </td>
+                        <td>
+                            {{ suppl.description }}
+                        </td>
+                        <td>
+                            {{ suppl.prix }}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+
+
+{% endblock %}

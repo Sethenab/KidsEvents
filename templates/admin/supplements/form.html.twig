@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Gérer les suppléments</h1>
+				{# 
+					form : variable envoyée par le contrôleur
+					<form novalidate="novalidate"
+				#}
+				{{ form_start(form, { attr : { 'novalidate' : 'novalidate' } }) }}
+					<p>
+						{{ form_label(form.nom, 'Nom :') }}
+						{{ form_widget(form.nom) }}
+						{{ form_errors(form.nom) }}
+					</p>
+					<p>
+						{{ form_label(form.description, 'Description :') }}
+						{{ form_widget(form.description) }}
+						{{ form_errors(form.description) }}
+					</p>
+					<p>
+						{{ form_label(form.prix, 'Prix :') }}
+						{{ form_widget(form.prix) }}
+						{{ form_errors(form.prix) }}
+					</p>
+					<p>
+						<input type="submit" class="btn btn-info">
+					</p>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>Gérer les thèmes</h1>
+				{#
+					affichage des messages flash
+					notice est la clé créée dans le contrôleur
+				#}
+				{% for item in app.flashes('notice') %}
+					<p class="alert alert-success">{{ item }}</p>
+				{% endfor %}
+				<p>
+					<a href="{{ url('admin.themes.form') }}" class="btn btn-primary">Ajouter</a>
+				</p>
+				<table class="table table-striped">
+					<tr>
+						<th>Image</th>
+						<th>Id</th>
+						<th>Thème</th>
+                        <th>Description</th>
+						<th>Durée</th>
+                        <th>Prix</th>
+						<th>Age Minimum</th>
+                        <th>Age Maximum</th>
+						<th>Nb d'enfants Min</th>
+                        <th>Nb d'enfants Max</th>
+						<th></th>
+						
+						
+					</tr>
+					{# results est envoyé par le contrôleur #}
+					{% for theme in results %}
+						<tr>
+							<td>
+								<img src="{{ asset('img/' ~ theme.imageIllustration) }}" width=200px height=200px></img>
+							</td>
+							<td>
+								{{ theme.id }}
+							</td>
+							<td>
+								{{ theme.name }}
+							</td>
+                            <td>
+								{{ theme.description }}
+							</td>
+							<td>
+								{{ theme.duree }}
+							</td>
+                            <td>
+								{{ theme.prix }}
+							</td>
+							<td>
+								{{ theme.ageMinimum }}
+							</td>
+                            <td>
+								{{ theme.ageMaximum }}
+							</td>
+							<td>
+								{{ theme.nbEnfantsMinimum }}
+							</td>
+							<td>
+								{{ theme.nbEnfantsMaximum }}
+							</td>
+							<td>
+								<a href="{{ url('admin.themes.form.update', { id: theme.id } ) }}" class="btn btn-warning">Modifier</a>
+
+								<a href="{{ url('admin.themes.remove', { id: theme.id } ) }}" class="btn btn-danger">Supprimer</a>
+							</td>
+						</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+{% endblock %}
